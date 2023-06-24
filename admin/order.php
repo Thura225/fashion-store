@@ -1,45 +1,45 @@
 <?php
 session_start();
 error_reporting(1);
-if($_SESSION['admin-email']=='admin@gmail.com'){
-?>
+if ($_SESSION['admin-email'] == 'admin@gmail.com') {
+    ?>
 
-<!DOCTYPE html>
-<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orders</title>
-    <link rel="stylesheet" href="../css/index.css" />
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Orders</title>
+        <link rel="stylesheet" href="../css/index.css" />
+    </head>
 
-<body class='bg-secondary'>
-    <header class="w-100 sticky-top d-flex flex-row bg-primary justify-content-between shadow-lg">
+    <body class='bg-secondary'>
+        <header class="w-100 sticky-top d-flex flex-row bg-primary justify-content-between shadow-lg">
 
-        <nav class="navbar navbar-expand-lg w-75">
-            <div class='container'>
-                <a href='#' class="navbar-brand text-decoration-none text-white fs-1">FASHION STORE</a>
+            <nav class="navbar navbar-expand-lg w-75">
+                <div class='container'>
+                    <a href='#' class="navbar-brand text-decoration-none text-white fs-1">FASHION STORE</a>
+                </div>
+                <ul class='navbar-nav d-none d-lg-flex'>
+                    <li class='nav-item'><a href="index.php" class='nav-link text-white'>Products</a></li>
+                    <li class='nav-item'><a href="add_product.php" class='nav-link text-white'>Add New</a></li>
+                    <li class='nav-item'><a href="order.php" class='nav-link text-white'>Order</a></li>
+                    <li class='nav-item'><a href="feedback.php" class='nav-link text-white'>Feedback</a></li>
+                </ul>
+            </nav>
+            <div class='w-25 d-none d-lg-flex justify-content-center align-items-center'>
+                <a href="#" class="text-decoration-none"><img class="profile-img" src="img/unknown.jpg" alt=""></a>
             </div>
-            <ul class='navbar-nav d-none d-lg-flex'>
-                <li class='nav-item'><a href="index.php" class='nav-link text-white'>Products</a></li>
-                <li class='nav-item'><a href="add_product.php" class='nav-link text-white'>Add New</a></li>
-                <li class='nav-item'><a href="order.php" class='nav-link text-white'>Order</a></li>
-                <li class='nav-item'><a href="feedback.php" class='nav-link text-white'>Feedback</a></li>
-            </ul>
-        </nav>
-        <div class='w-25 d-none d-lg-flex justify-content-center align-items-center'>
-            <a href="#" class="text-decoration-none"><img class="profile-img" src="img/unknown.jpg" alt=""></a>
-        </div>
-        <div id='side-btn' class='side-btn m-auto d-block d-lg-none'>
-            <div class='menu'></div>
-            <div class='menu'></div>
-            <div class='menu'></div>
-        </div>
-    </header>
-    <a href='../index.php' class='btn btn-danger m-2'>Go back to user's site!</a>
-    <div id='side' class='side position-fixed top-0 start-0 d-none d-lg-none justify-content-end w-100 h-100'>
+            <div id='side-btn' class='side-btn m-auto d-block d-lg-none'>
+                <div class='menu'></div>
+                <div class='menu'></div>
+                <div class='menu'></div>
+            </div>
+        </header>
+        <a href='../index.php' class='btn btn-danger m-2'>Go back to user's site!</a>
+        <div id='side' class='side position-fixed top-0 start-0 d-none d-lg-none justify-content-end w-100 h-100'>
             <div class='sidebar w-50 h-100 bg-dark'>
                 <div class='d-flex flex-row justify-content-end'>
                     <span id='close' class='text-end fs-3 text-white mx-2'>&#x2715;</span>
@@ -48,7 +48,7 @@ if($_SESSION['admin-email']=='admin@gmail.com'){
                     <img class='profile-img' src='' />
                     <span class='text-white mt-3 fs-4'>
                         <?php echo $_SESSION['admin-name'] ?>
-                    <span>
+                        <span>
                 </div>
                 <hr class='text-white'>
                 <ul class='list-group m-0'>
@@ -71,31 +71,39 @@ if($_SESSION['admin-email']=='admin@gmail.com'){
             </div>
         </div>
         <h1 class='mx-3 my-2 text-center'>Orders</h1>
-    <main class='mt-3 p-3 d-flex flex-column flex-lg-row flex-wrap justify-content-start'>
-        <?php
-        include('connection.php');
-        $sql = "SELECT * FROM orders";
-        $sqldata = mysqli_query($con,$sql);
-        while (list($id, $customer, $name,$img, $price, $address, $credit) = mysqli_fetch_array($sqldata)) {
-            echo "<div class='d-flex flex-row justify-content-between shadow-lg w-100 mx-3 y-2 px-5 py-3'>";
-            echo "<div>";
-            echo "<h1>$name</h1>";
-            echo "<table border=0>";
-            echo "<tr><td rowspan='4'><img src='$img' width=100 height=150 class='me-3' /></td><td>Customer:</td><td>$customer</td></tr>";
-            echo "<tr><td>Price:</td><td>$price</td></tr>";
-            echo "<tr><td>Address:</td><td>$address</td></tr>";
-            echo "<tr><td>Credit-No:</td><td>$credit</td></tr>";
-            echo "</table>";
-            echo "</div>";
-            echo "<form method='post' class='align-self-center'><input type='submit' value='Accept' class='btn btn-success align-center'/></form>";
-            echo "</div>";
-        }
-        ?>
-    </main>
-    <script src="../js/index.js"></script>
-</body>
+        <main class='mt-3 p-3 d-flex flex-column flex-lg-row flex-wrap justify-content-start'>
+            <?php
+            include('connection.php');
+            $sql = "SELECT * FROM orders";
+            $sqldata = mysqli_query($con, $sql);
+            while (list($id, $customer, $name, $img, $price, $address, $credit) = mysqli_fetch_array($sqldata)) {
+                echo "<div class='order d-flex flex-row justify-content-between shadow-lg w-100 mx-3 y-2 px-5 py-3'>";
+                echo "<div>";
+                echo "<h1>$name</h1>";
+                echo "<table border=0>";
+                echo "<tr><td rowspan='4'><img src='$img' width=100 height=150 class='me-3' /></td><td>Customer:</td><td>$customer</td></tr>";
+                echo "<tr><td>Price:</td><td>$price</td></tr>";
+                echo "<tr><td>Address:</td><td>$address</td></tr>";
+                echo "<tr><td>Credit-No:</td><td>$credit</td></tr>";
+                echo "</table>";
+                echo "</div>";
+                echo "<form method='post' class='align-self-center'><input type='submit' value='Accept' class='btn btn-success align-center'/></form>";
+                echo "</div>";
+            }
+            ?>
+        </main>
+        <footer class='order position-absolute bottom-0 start-0 w-100 d-flex flex-row bg-primary m-0'>
+            <div class='w-50 d-flex justify-content-center align-items-center p-3'>
+                <p class='m-0 text-white'>Owned by <a href='#' class='text-success'>Fashion Store</a></p>
+            </div>
+            <div class='w-50 d-flex justify-content-center align-items-center p-3'>
+                <p class='m-0 text-white'>Created by <a href='#' class='text-info'>Aung Thura Tun</a></p>
+            </div>
+        </footer>
+        <script src="../js/index.js"></script>
+    </body>
 
-</html>
-<?php }else{
+    </html>
+<?php } else {
     header('location:login.php');
-}?>
+} ?>

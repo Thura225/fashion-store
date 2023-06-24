@@ -6,7 +6,7 @@ include('connection.php');
 
 $email = $_SESSION['email'];
 $sql = "SELECT * FROM profile WHERE user_email='$email'";
-$val = mysqli_query($con,$sql);
+$val = mysqli_query($con, $sql);
 $obj = mysqli_fetch_object($val);
 $img = $obj->img;
 //     include('connection.php');
@@ -144,7 +144,7 @@ $img = $obj->img;
             // include('connection.php');
             $user = $_SESSION['name'];
             $sql = "SELECT * FROM carts WHERE customer='$user'";
-            $sqldata = mysqli_query($con,$sql);
+            $sqldata = mysqli_query($con, $sql);
             while (list($id, $customer, $name, $img, $price) = mysqli_fetch_array($sqldata)) {
                 echo "<div class='cart-item p-3 d-flex justify-content-between'>";
                 echo "<div class='d-flex flex-row'>";
@@ -167,7 +167,7 @@ $img = $obj->img;
         }
         ?>
     </main>
-    <footer class='position-absolute w-100 d-flex flex-row bg-primary m-0'>
+    <footer class='position-absolute bottom-0 start-0 w-100 d-flex flex-row bg-primary m-0'>
         <div class='w-50 d-flex justify-content-center align-items-center p-3'>
             <p class='m-0 text-white'>Owned by <a href='#' class='text-success'>Fashion Store</a></p>
         </div>

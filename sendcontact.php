@@ -8,7 +8,7 @@ if (isset($_POST['send'])) {
     $content = $_POST['content'];
 
     $add_feedback = "INSERT INTO feedback VALUES ('','$name','$title','$content')";
-    mysqli_query($con,$add_feedback);
+    mysqli_query($con, $add_feedback);
     header('location:index.php');
 }
 ?>

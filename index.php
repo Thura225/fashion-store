@@ -5,7 +5,7 @@ include('connection.php');
 
 
 $query = "SELECT * FROM products";
-$products = mysqli_query($con,$query);
+$products = mysqli_query($con, $query);
 while (list($id, $name, $type, $img, $description, $price, $stock) = mysqli_fetch_array($products)) {
     if (isset($_GET[$id])) {
         if ($_SESSION['email'] == '') {
@@ -16,10 +16,10 @@ while (list($id, $name, $type, $img, $description, $price, $stock) = mysqli_fetc
             $order_price = $price;
             $order_id = 'ord' . rand(1111, 9999);
             $ordersql = "INSERT INTO carts VALUES ('$order_id','$customer','$order_name','$img','$order_price')";
-            mysqli_query($con,$ordersql);
+            mysqli_query($con, $ordersql);
             $updatestocks = $stock - 1;
             $updateproduct = "UPDATE products SET product_stocks='$updatestocks' WHERE product_id='$id'";
-            $val = mysqli_query($con,$updateproduct);
+            $val = mysqli_query($con, $updateproduct);
             header('location:cart.php');
         }
     }
@@ -56,7 +56,7 @@ while (list($id, $name, $type, $img, $description, $price, $stock) = mysqli_fetc
         } else {
             $email = $_SESSION['email'];
             $sql = "SELECT * FROM profile WHERE user_email='$email'";
-            $val = mysqli_query($con,$sql);
+            $val = mysqli_query($con, $sql);
             $obj = mysqli_fetch_object($val);
             $img = $obj->img; ?>
             <div class='profile w-25 d-none d-lg-flex justify-content-center align-items-center position-relative'>
@@ -139,11 +139,11 @@ while (list($id, $name, $type, $img, $description, $price, $stock) = mysqli_fetc
     <?php echo @$err ?>
     <h1 class='mx-3 my-2 text-center'>Products</h1>
     <main class='mt-3 p-3 d-flex flex-column flex-lg-row flex-wrap justify-content-start'>
-        
+
         <?php
         // include('connection.php');
         $sql = "SELECT * FROM products";
-        $sqldata = mysqli_query($con,$sql);
+        $sqldata = mysqli_query($con, $sql);
         while (list($id, $name, $type, $img, $description, $price, $stock) = mysqli_fetch_array($sqldata)) {
             echo "<div class='card mx-lg-auto border-0 shadow-lg'>";
             echo "<div class='card-header border-0 bg-primary'>";
@@ -165,11 +165,11 @@ while (list($id, $name, $type, $img, $description, $price, $stock) = mysqli_fetc
             echo "</form>";
             echo '</div>';
             echo '</div>';
-            
+
         }
         ?>
     </main>
-    <footer class='position-absolute w-100 d-flex flex-row bg-primary m-0'>
+    <footer class='position-absolute bottom-0 start-0 w-100 d-flex flex-row bg-primary m-0'>
         <div class='w-50 d-flex justify-content-center align-items-center p-3'>
             <p class='m-0 text-white'>Owned by <a href='#' class='text-success'>Fashion Store</a></p>
         </div>

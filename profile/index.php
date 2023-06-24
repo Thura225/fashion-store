@@ -7,7 +7,7 @@ if ($_SESSION['email'] == '') {
 } else {
     $email = $_SESSION['email'];
     $sql = "SELECT * FROM profile WHERE user_email='$email'";
-    $val = mysqli_query($con,$sql);
+    $val = mysqli_query($con, $sql);
     $obj = mysqli_fetch_object($val);
     $img = $obj->img;
     ?>
@@ -113,7 +113,7 @@ if ($_SESSION['email'] == '') {
             <main class='mt-3 p-3 d-flex flex-column flex-lg-row flex-wrap justify-content-start'>
                 <?php
                 $user = "SELECT * FROM users WHERE email='$email'";
-                $m = mysqli_query($con,$user);
+                $m = mysqli_query($con, $user);
                 $data = mysqli_fetch_object($m);
                 $name = $data->name;
                 $email = $data->email;
@@ -129,6 +129,14 @@ if ($_SESSION['email'] == '') {
                 echo "</div>";
                 ?>
             </main>
+            <footer class='position-absolute bottom-0 start-0 w-100 d-flex flex-row bg-primary m-0'>
+                <div class='w-50 d-flex justify-content-center align-items-center p-3'>
+                    <p class='m-0 text-white'>Owned by <a href='#' class='text-success'>Fashion Store</a></p>
+                </div>
+                <div class='w-50 d-flex justify-content-center align-items-center p-3'>
+                    <p class='m-0 text-white'>Created by <a href='#' class='text-info'>Aung Thura Tun</a></p>
+                </div>
+            </footer>
             <script src="../js/index.js"></script>
         </body>
 

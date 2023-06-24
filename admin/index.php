@@ -48,7 +48,7 @@ if ($_SESSION['admin-email'] == 'admin@gmail.com') {
                     <img class='profile-img' src='' />
                     <span class='text-white mt-3 fs-4'>
                         <?php echo $_SESSION['admin-name'] ?>
-                    <span>
+                        <span>
                 </div>
                 <hr class='text-white'>
                 <ul class='list-group m-0'>
@@ -77,7 +77,7 @@ if ($_SESSION['admin-email'] == 'admin@gmail.com') {
             <?php
             include('connection.php');
             $sql = "SELECT * FROM products";
-            $sqldata = mysqli_query($con,$sql);
+            $sqldata = mysqli_query($con, $sql);
             while (list($id, $name, $type, $img, $description, $price, $stock) = mysqli_fetch_array($sqldata)) {
                 echo "<div class='card border-0 shadow-lg'>";
                 echo "<div class='card-header border-0 bg-primary'>";
@@ -105,6 +105,14 @@ if ($_SESSION['admin-email'] == 'admin@gmail.com') {
             }
             ?>
         </main>
+        <footer class='position-absolute bottom-0 start-0 w-100 d-flex flex-row bg-primary m-0'>
+            <div class='w-50 d-flex justify-content-center align-items-center p-3'>
+                <p class='m-0 text-white'>Owned by <a href='#' class='text-success'>Fashion Store</a></p>
+            </div>
+            <div class='w-50 d-flex justify-content-center align-items-center p-3'>
+                <p class='m-0 text-white'>Created by <a href='#' class='text-info'>Aung Thura Tun</a></p>
+            </div>
+        </footer>
         <script src="../js/index.js"></script>
     </body>
 

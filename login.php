@@ -149,6 +149,14 @@ if (isset($_POST['login'])) {
             <p>Doesn't have an account? <a href="register.php">Register Now</a></p>
         </form>
     </main>
+    <footer class='position-absolute bottom-0 start-0 w-100 d-flex flex-row bg-primary m-0'>
+        <div class='w-50 d-flex justify-content-center align-items-center p-3'>
+            <p class='m-0 text-white'>Owned by <a href='#' class='text-success'>Fashion Store</a></p>
+        </div>
+        <div class='w-50 d-flex justify-content-center align-items-center p-3'>
+            <p class='m-0 text-white'>Created by <a href='#' class='text-info'>Aung Thura Tun</a></p>
+        </div>
+    </footer>
     <script src="js/index.js"></script>
 </body>
 
