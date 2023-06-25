@@ -9,24 +9,6 @@ $sql = "SELECT * FROM profile WHERE user_email='$email'";
 $val = mysqli_query($con, $sql);
 $obj = mysqli_fetch_object($val);
 $img = $obj->img;
-//     include('connection.php');
-//     $query = "SELECT * FROM products";
-//     $products = mysql_query($query);
-//     while (list($id, $name, $type, $img, $description, $price, $stock) = mysql_fetch_array($products)) {
-//         if (isset($_POST[$id])) {
-//             $customer = $_SESSION['name'];
-//             $order_name = $name;
-//             $order_price = $price;
-//             $order_id = 'ord' . rand(1111, 9999);
-//             $ordersql = "INSERT INTO carts VALUES ('$order_id','$customer','$order_name','$img','$order_price')";
-//             mysql_query($ordersql);
-//             $updatestocks = $stock - 1;
-//             $updateproduct = "UPDATE products SET product_stocks='$updatestocks' WHERE product_id='$id'";
-//             $val = mysql_query($updateproduct);
-//             header('location:cart.php');
-//         }
-//     }
-// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
