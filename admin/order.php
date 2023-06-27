@@ -30,7 +30,7 @@ if ($_SESSION['admin-email'] == 'admin@gmail.com') {
                 </ul>
             </nav>
             <div class='w-25 d-none d-lg-flex justify-content-center align-items-center'>
-                <a href="#" class="text-decoration-none"><img class="profile-img" src="img/unknown.jpg" alt=""></a>
+                <a href="#" class="text-decoration-none"><img class="profile-img" src="img/admin.png" alt=""></a>
             </div>
             <div id='side-btn' class='side-btn m-auto d-block d-lg-none'>
                 <div class='menu'></div>
@@ -45,7 +45,7 @@ if ($_SESSION['admin-email'] == 'admin@gmail.com') {
                     <span id='close' class='text-end fs-3 text-white mx-2'>&#x2715;</span>
                 </div>
                 <div class='d-flex flex-column align-items-center p-5'>
-                    <img class='profile-img' src='' />
+                    <img class='profile-img' src='img/admin.png' />
                     <span class='text-white mt-3 fs-4'>
                         <?php echo $_SESSION['admin-name'] ?>
                         <span>
@@ -71,7 +71,7 @@ if ($_SESSION['admin-email'] == 'admin@gmail.com') {
             </div>
         </div>
         <h1 class='mx-3 my-2 text-center'>Orders</h1>
-        <main class='mt-3 p-3 d-flex flex-column flex-lg-row flex-wrap justify-content-start'>
+        <main class='mt-3 mb-5 p-3 d-flex flex-column flex-lg-row flex-wrap justify-content-start'>
             <?php
             include('connection.php');
             $sql = "SELECT * FROM orders";
@@ -92,13 +92,9 @@ if ($_SESSION['admin-email'] == 'admin@gmail.com') {
             }
             ?>
         </main>
-        <footer class='order position-absolute bottom-0 start-0 w-100 d-flex flex-row bg-primary m-0'>
-            <div class='w-50 d-flex justify-content-center align-items-center p-3'>
-                <p class='m-0 text-white'>Owned by <a href='#' class='text-success'>Fashion Store</a></p>
-            </div>
-            <div class='w-50 d-flex justify-content-center align-items-center p-3'>
-                <p class='m-0 text-white'>Created by <a href='#' class='text-info'>Aung Thura Tun</a></p>
-            </div>
+        <footer class='bg-primary py-1 position-fixed start-0 bottom-0 w-100'>
+            <p class='text-success fs-4 mt-2 text-center'>Created by <a href='#'
+                    class='text-white text-decoration-none'>Aung Thura Tun</a></p>
         </footer>
         <script src="../js/index.js"></script>
     </body>

@@ -120,7 +120,7 @@ $img = $obj->img;
 
         </div>
     </div>
-    <main class='mt-3 p-3 d-flex flex-column flex-lg-row flex-wrap justify-content-start'>
+    <main class='mt-3 mb-5 p-3 d-flex flex-column flex-lg-row flex-wrap justify-content-start'>
         <div class='w-100 mx-lg-auto'>
             <h1 class='text-center my-5'>Contact Form</h1>
             <p class='text-center fs-4 fw-700'>If you want to give some feedback or have an issue, feel free use that
@@ -142,13 +142,8 @@ $img = $obj->img;
             <?php } ?>
         </div>
     </main>
-    <footer class='position-absolute bottom-0 start-0 w-100 d-flex flex-row bg-primary m-0'>
-        <div class='w-50 d-flex justify-content-center align-items-center p-3'>
-            <p class='m-0 text-white'>Owned by <a href='#' class='text-success'>Fashion Store</a></p>
-        </div>
-        <div class='w-50 d-flex justify-content-center align-items-center p-3'>
-            <p class='m-0 text-white'>Created by <a href='#' class='text-info'>Aung Thura Tun</a></p>
-        </div>
+    <footer class='bg-primary py-1 position-fixed start-0 bottom-0 w-100'>
+        <p class='text-success fs-4 mt-2 text-center'>Created by <a href='#' class='text-white text-decoration-none'>Aung Thura Tun</a></p>
     </footer>
     <script src="js/index.js"></script>
 </body>

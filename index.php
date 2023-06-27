@@ -38,7 +38,7 @@ while (list($id, $name, $type, $img, $description, $price, $stock) = mysqli_fetc
 </head>
 
 <body class='bg-secondary'>
-    <header class=" w-100 d-flex flex-row bg-primary justify-content-between shadow-lg">
+    <header class=" w-100 d-flex flex-row bg-primary sticky-top justify-content-between shadow-lg">
 
         <nav class="navbar navbar-expand-lg w-75">
             <div class='container'>
@@ -138,7 +138,7 @@ while (list($id, $name, $type, $img, $description, $price, $stock) = mysqli_fetc
     </div>
     <?php echo @$err ?>
     <h1 class='mx-3 my-2 text-center'>Products</h1>
-    <main class='mt-3 p-3 d-flex flex-column flex-lg-row flex-wrap justify-content-start'>
+    <main class='mt-3 mb-5 p-3 d-flex flex-column flex-lg-row flex-wrap justify-content-start'>
 
         <?php
         // include('connection.php');
@@ -169,13 +169,8 @@ while (list($id, $name, $type, $img, $description, $price, $stock) = mysqli_fetc
         }
         ?>
     </main>
-    <footer class='position-absolute bottom-0 start-0 w-100 d-flex flex-row bg-primary m-0'>
-        <div class='w-50 d-flex justify-content-center align-items-center p-3'>
-            <p class='m-0 text-white'>Owned by <a href='#' class='text-success'>Fashion Store</a></p>
-        </div>
-        <div class='w-50 d-flex justify-content-center align-items-center p-3'>
-            <p class='m-0 text-white'>Created by <a href='#' class='text-info'>Aung Thura Tun</a></p>
-        </div>
+    <footer class='bg-primary py-1 position-fixed start-0 bottom-0 w-100'>
+        <p class='text-success fs-4 mt-2 text-center'>Created by <a href='#' class='text-white text-decoration-none'>Aung Thura Tun</a></p>
     </footer>
     <script src="js/index.js"></script>
 </body>

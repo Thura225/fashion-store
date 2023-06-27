@@ -133,7 +133,7 @@ if (isset($_POST['login'])) {
             <?php } ?>
         </div>
     </div>
-    <main class='mt-3 p-3 d-flex flex-column flex-lg-row flex-wrap justify-content-start'>
+    <main class='mt-3 mb-5 p-3 d-flex flex-column flex-lg-row flex-wrap justify-content-start'>
         <form class='mt-5 mx-auto shadow-lg p-3 rounded' method="post">
             <h2 class='text-start my-2'>Login</h2>
             <?php echo $err ?>
@@ -149,13 +149,8 @@ if (isset($_POST['login'])) {
             <p>Doesn't have an account? <a href="register.php">Register Now</a></p>
         </form>
     </main>
-    <footer class='position-absolute bottom-0 start-0 w-100 d-flex flex-row bg-primary m-0'>
-        <div class='w-50 d-flex justify-content-center align-items-center p-3'>
-            <p class='m-0 text-white'>Owned by <a href='#' class='text-success'>Fashion Store</a></p>
-        </div>
-        <div class='w-50 d-flex justify-content-center align-items-center p-3'>
-            <p class='m-0 text-white'>Created by <a href='#' class='text-info'>Aung Thura Tun</a></p>
-        </div>
+    <footer class='bg-primary py-1 position-fixed start-0 bottom-0 w-100'>
+        <p class='text-success fs-4 mt-2 text-center'>Created by <a href='#' class='text-white text-decoration-none'>Aung Thura Tun</a></p>
     </footer>
     <script src="js/index.js"></script>
 </body>

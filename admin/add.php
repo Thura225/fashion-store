@@ -7,6 +7,7 @@ if (isset($_POST['add'])) {
     $description = $_POST['description'];
     $price = $_POST['price'];
     $stock = $_POST['stock'];
+    
     if (file_exists("img" . "/" . $_FILES['img']['name'])) {
         $err = "FIle already exists.";
     } else {

@@ -3,6 +3,16 @@ $secondary: #f5f5f5;
 
 @import "../bootstrap/scss/bootstrap.scss";
 
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.sticky-top{
+  z-index: 3;
+}
+
 .nav-item {
   width: 150px;
   display: inline-block;
@@ -118,7 +128,12 @@ main .w-lg-75 {
 }
 
 .side .sidebar {
+  z-index: 7;
   border-radius: 10px 0 0 10px;
+}
+
+#close{
+  cursor: pointer;
 }
 
 .rounded {

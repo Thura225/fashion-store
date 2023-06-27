@@ -2,9 +2,6 @@ const side_btn = document.getElementById("side-btn");
 const side = document.getElementById("side");
 const close_btn = document.getElementById("close");
 const cards = document.querySelectorAll(".card");
-const feedbacks = documents.querySelectorAll(".feedback");
-const orders = document.querySelectorAll('.order');
-const items = document.querySelectorAll('.cart-item');
 
 
 side_btn.addEventListener("click", function () {
@@ -13,6 +10,11 @@ side_btn.addEventListener("click", function () {
 });
 
 close_btn.addEventListener("click", function () {
+  side.classList.remove("d-flex");
+  side.classList.add("d-none");
+});
+
+side.addEventListener("click", function () {
   side.classList.remove("d-flex");
   side.classList.add("d-none");
 });
@@ -34,6 +36,3 @@ for (let i = 0; i < cards.length; i++) {
 }
 
 cards.forEach((el) => observer.observe(el));
-items.forEach((el) => observer.observe(el));
-feedbacks.forEach((el)=>observer.observe(el));
-orders.forEach((el)=>observer.observe(el));
